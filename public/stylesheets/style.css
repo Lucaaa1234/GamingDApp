@@ -1,8 +1,59 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow-y: hidden; 
+  overflow-x: hidden;
 }
 
-a {
-  color: #00B7FF;
+div.rectangle{
+  height: 45em;
+  width: 90em;
+  background-color: royalblue;
+  margin: auto;
+  position: relative;
+  
 }
+.square {
+  position: absolute;
+  
+}
+
+/*button.sell_chicken{
+  float: right;
+  position:relative;
+  margin-top: 2em;
+  margin-right: 2em;
+  vertical-align: middle;
+}*/
+
+.square_1 {
+  top: 0;
+  left: 0;
+  background-color: blue;
+  width: 70%;
+  height: 70%;
+}
+
+.square_2 {
+  top: 0;
+  right: 0;
+  background-color: red;
+  width: 30%;
+  height: 100%;
+}
+
+.square_3 {
+  bottom: 0;
+  left: 0;
+  width:70%;
+  height:30%;
+  background-color: green;
+}
+
+.square_1_1 {
+  width:60%;
+  height:30%;
+  margin:5em;
+  background-color: brown;
+}
+
