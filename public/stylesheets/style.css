@@ -30,30 +30,104 @@ div.rectangle{
   top: 0;
   left: 0;
   background-color: blue;
-  width: 70%;
+  width: 75%;
   height: 70%;
+  justify-content: center;
+  align-items: center;
 }
 
 .square_2 {
   top: 0;
   right: 0;
-  background-color: red;
-  width: 30%;
+  background-color: lightblue;
+  width: 25%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 3px solid black;
 }
 
 .square_3 {
   bottom: 0;
   left: 0;
-  width:70%;
+  width: 74.85%;
   height:30%;
   background-color: green;
+  border-top: 2px solid black;
 }
 
 .square_1_1 {
-  width:60%;
-  height:30%;
-  margin:5em;
+  width:75%;
+  height:45%;
+  margin: 6em;
+  top: 7em;
+  left: 2em;
   background-color: brown;
+  position: absolute;
+  border: 3px solid black ;
+  border-top: 0px
 }
-
+div.inventory_square{
+  flex: 1; 
+  border: 3px solid #000;
+  height: 32%;
+  width:97%;
+  border-radius: 10%;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  
+}
+div.inventory_square:nth-child(1){
+  background-color: green;
+  top : 1;
+  margin-top:0.2em;
+  margin-bottom: 0.2em;
+}
+div.inventory_square:nth-child(2){
+  background-color: purple;
+  top: 33.75%;
+}
+div.inventory_square:nth-child(3){
+  background-color: burlywood;
+  top: 67%;
+}
+.shop_square{
+    width: 20%;
+    height: 88%;
+    display: inline-block;
+    background-color: #ccc;
+    margin-right: 10px;
+    top: 4%;
+    border: 3px solid black;
+    border-radius: 6%;
+}
+.shop_square:nth-child(1){
+  left : 18%;
+  background-color: blue;
+}
+.shop_square:nth-child(2){
+  left : 40%;
+  background-color: blueviolet;
+}
+.shop_square:nth-child(3){
+  left : 62%;
+  background-color: rgb(68, 52, 84);
+}
+.shop_square:nth-child(4){
+  left:1%;
+  width: 16%;
+  top: 1%;
+  height: 95%;
+}
+.shop_square:nth-child(5){
+  left: 83%;
+  top: 1%;
+  height: 95%;
+  width: 16%;
+}
+.letter{
+  display: block;
+  text-align: center;
+  font-size: 150%;
+}
