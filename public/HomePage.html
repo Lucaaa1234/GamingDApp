@@ -15,7 +15,10 @@
 <div class="rectangle">
         <div class="square square_1">
                 <div class="square square_1_1"></div>
-                <div class="square square_1_2"></div>
+                <div class="square square_1_2">
+                        <button class="square cuore" onclick="Accoppiamento()"></button>
+                        <button class="scritta_cuore" onclick="Accoppiamento()">Accoppia</button>
+                </div>
         </div>
         <div class="square square_2">
                 <div class="square inventory_square"></div>
@@ -23,9 +26,24 @@
                 <div class="square inventory_square"></div>
         </div>
         <div class="square square_3">
-                <div class="square shop_square"></div>
-                <div class="square shop_square"></div>
-                <div class="square shop_square"></div>
+                <div class="square shop_square rarity">
+                        <div class="square price">
+                                <span class="price_scritta">100</span>
+                        </div>
+                        <button class="Gallina_shop comune"></button>
+                </div>
+                <div class="square shop_square rarity">
+                        <div class="square price">
+                                <span class="price_scritta">1000</span>
+                        </div>
+                        <button class="Gallina_shop rara"></button>
+                </div>
+                <div class="square shop_square rarity">
+                        <div class="square price">
+                                <span class="price_scritta">5000</span>
+                        </div>
+                        <button class="Gallina_shop epica"></button>
+                </div>
                 <div class="square shop_square">
                         <span class="letter">C</span>
                         <span class="letter">H</span>

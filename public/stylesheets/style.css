@@ -6,7 +6,7 @@ body {
 }
 .title{
   margin-left: 6%;
-  margin-bottom: -3%;
+  margin-bottom:-3%;
   text-decoration: underline;
   font-weight: bold;
   color: red;
@@ -19,11 +19,9 @@ div.rectangle{
   margin-top: 3%;
   position: relative;
   border: 2px solid #000;
-  
 }
 .square {
   position: absolute;
-  
 }
 
 /*button.sell_chicken{
@@ -84,6 +82,30 @@ div.rectangle{
   background-color: rgb(48, 189, 125);
   position: absolute;
 }
+.cuore{
+  left: 2%;
+  top: 5%;
+  width: 9.3%;
+  height: 80%;
+  background-image: url(/immagini/Cuore.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+}
+.scritta_cuore{
+  position: relative;
+  margin-left: 12.5%;
+  top: 35%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+}
+
 div.inventory_square{
   flex: 1; 
   border: 3px solid #000;
@@ -119,15 +141,15 @@ div.inventory_square:nth-child(3){
 }
 .shop_square:nth-child(1){
   left : 18%;
-  background-color: blue;
+  background-color: lightgray;
 }
 .shop_square:nth-child(2){
   left : 40%;
-  background-color: blueviolet;
+  background-color: burlywood;
 }
 .shop_square:nth-child(3){
   left : 62%;
-  background-color: rgb(68, 52, 84);
+  background-color: rgb(150, 96, 150);
 }
 .shop_square:nth-child(4){
   left:1%;
@@ -143,6 +165,9 @@ div.inventory_square:nth-child(3){
   width: 16%;
   border: none;
 }
+.rarity{
+  background-color: lightgray;
+}
 .letter{
   display: block;
   text-align: center;
@@ -153,4 +178,40 @@ div.inventory_square:nth-child(3){
 }
 .shop .S{
   margin-top: 20%;
+}
+.Gallina_shop{
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+}
+
+.comune{
+  background-image: url(/immagini/comune.png);
+}
+
+.rara{
+  background-image: url(/immagini/rara.png);
+}
+
+.epica{
+  background-image: url(/immagini/epica.png);
+}
+div.price{
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  opacity: 0.8;
+  background-color: gray;
+  
+}
+.price_scritta{
+  color: white;
+  margin-top: 40%;
+  margin-left: 40%;
+  
 }
