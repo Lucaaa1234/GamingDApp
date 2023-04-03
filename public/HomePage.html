@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home page!</title>
+    <title>Chicken that Lays Finney Eggs</title>
     <script type = "text/javascript" src="/javascripts/functions.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.3.5/dist/web3.min.js"></script>
@@ -11,69 +11,87 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<h1 class="title"> Goose that Lays Finney Eggs</h1>
+<h1 class="title"> Chicken that Lays Finney Eggs</h1>
 <div class="rectangle">
         <div class="square square_1">
-                <div class="square square_1_1"></div>
+                <div class="square square_1_1">
+                        <div class="square working_chicken chicken_left">
+                                <div class="square chicken_image left_chicken_image"></div>
+                        </div>
+                        <div class="square working_chicken chicken_right">
+                                <div class="square chicken_image right_chicken_image"></div>
+                        </div>
+                </div>
                 <div class="square square_1_2">
                         <button class="square cuore" onclick="Accoppiamento()"></button>
                         <button class="scritta_cuore" onclick="Accoppiamento()">Accoppia</button>
                 </div>
         </div>
         <div class="square square_2">
-                <div class="square inventory_square"></div>
-                <div class="square inventory_square"></div>
-                <div class="square inventory_square"></div>
+                <div class="square inventory_square">
+                        <button class="square inventary_function sell" onclick="Vendi_Gallina_Slot_3()"></button>
+                        <button class="square inventary_function switch" onclick="Sposta()"></button>
+                        <button class="square inventary_function rename"></button>
+                        <div class="square name_square">
+                                <span class="name_scritta">Pippo</span>
+                        </div>
+                        <div class="square inventary_image chicken_inventary1">
+
+                        </div>
+                </div>
+                <div class="square inventory_square">
+                        <button class="square inventary_function sell" onclick="Vendi_Gallina_Slot_4()"></button> 
+                        <button class="square inventary_function switch" onclick="Sposta()"></button>
+                        <button class="square inventary_function rename"></button>
+                        <div class="square name_square">
+                                <span class="name_scritta">Pluto</span>
+                        </div>
+                        <div class="square inventary_image chicken_inventary2">
+
+                        </div>
+                </div>
+                <div class="square inventory_square">
+                        <button class="square inventary_function sell" onclick="Vendi_Gallina_Slot_5()"></button>
+                        <button class="square inventary_function switch" onclick="Sposta()"></button>
+                        <button class="square inventary_function rename"></button>
+                        <div class="square name_square">
+                                <span class="name_scritta">Topolino</span>
+                        </div>
+                        <div class="square inventary_image chicken_inventary3">
+
+                        </div>
+                </div>
         </div>
         <div class="square square_3">
                 <div class="square shop_square rarity">
                         <div class="square price">
                                 <span class="price_scritta">100</span>
                         </div>
-                        <button class="Gallina_shop comune"></button>
+                        <button class="Gallina_shop comune" onclick="Compra_Comune()"></button>
                 </div>
                 <div class="square shop_square rarity">
                         <div class="square price">
-                                <span class="price_scritta">1000</span>
+                                <span class="price_scritta" onclick="Compra_Rara()">1000</span>
                         </div>
                         <button class="Gallina_shop rara"></button>
                 </div>
                 <div class="square shop_square rarity">
                         <div class="square price">
-                                <span class="price_scritta">5000</span>
+                                <span class="price_scritta" onclick="Compra_Epica()">5000</span>
                         </div>
                         <button class="Gallina_shop epica"></button>
                 </div>
                 <div class="square shop_square">
-                        <span class="letter">C</span>
-                        <span class="letter">H</span>
-                        <span class="letter">I</span>
-                        <span class="letter">C</span>
-                        <span class="letter">K</span>
-                        <span class="letter">E</span>
-                        <span class="letter">N</span>
-                </div>
-                <div class="square shop_square shop">
-                        <span class="letter S">S</span>
-                        <span class="letter">H</span>
-                        <span class="letter">O</span>
-                        <span class="letter">P</span>
+                                <div class="divide top"><span class="letter Chicken_write">Chicken</span></div> 
+                                <div class="divide bottom"><span class="letter Shop_write">Shop</span></div>
                 </div>
         </div>
 
 
 <!--<button onclick="connectMetamask()">connect Metamask</button>
 <button onclick="loadContract()">load the smart contract</button>
-<button onclick="Compra_Comune()">Compra Comune</button>
-<button onclick="Compra_Rara()">Compra Rara</button>
-<button onclick="Compra_Epica()">Compra Epica </button>
-<button onclick="Vendi_Gallina_Slot_3()" class="sell_chicken">Vendi gallina slot 3 </button>
-<button onclick="Vendi_Gallina_Slot_4()" class="sell_chicken">Vendi gallina slot 4  </button>
-<button onclick="Vendi_Gallina_Slot_5()" class="sell_chicken">Vendi gallina slot 5  </button>
-<button onclick="Accoppiamento()">Accoppiamento </button>
 <button onclick="Riscatta()">Riscatta </button>
 <button onclick="Ritira_Soldi()">Ritira soldi  </button>
-<button onclick="Sposta()">Sposta </button> -->
 </div>
 </body>
 <footer>
