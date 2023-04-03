@@ -23,19 +23,10 @@ div.rectangle{
 .square {
   position: absolute;
 }
-
-/*button.sell_chicken{
-  float: right;
-  position:relative;
-  margin-top: 2em;
-  margin-right: 2em;
-  vertical-align: middle;
-}*/
-
 .square_1 {
   top: 0;
   left: 0;
-  background-color: blue;
+  background-color: rgb(209, 217, 252);
   width: 75%;
   height: 75%;
   justify-content: center;
@@ -59,13 +50,13 @@ div.rectangle{
   left: 0;
   width: 74.85%;
   height:25%;
-  background-color: green;
+  background-color: rgb(5, 44, 218);
   border-top: 2px solid black;
 }
 
 .square_1_1 {
   width:75%;
-  height:45%;
+  height:50%;
   margin: 6em;
   top: 7em;
   left: 2em;
@@ -106,14 +97,24 @@ div.working_chicken{
   margin-top: 3%;
   right: 2em;
   border-right: #000 solid 3px;
-  
+  font-family: monaco,Consolas,Lucida Console,monospace; 
+}
+.reclame{
+  width: 30%;
+  height: 10%;
+  margin-top: 28%;
+  margin-left: 35%;
+  background-color: transparent;
+  border: #000 solid 2px;
+  color: #000;
+  text-align: center;
+  border-radius: 10%;
 }
 .square_1_2 {
   width:100%;
   height: 25%;
   top: 0;
   left: 0;
-  background-color: rgb(48, 189, 125);
   position: absolute;
 }
 .cuore{
@@ -131,15 +132,37 @@ div.working_chicken{
 .scritta_cuore{
   position: relative;
   margin-left: 12.5%;
-  top: 35%;
+  top: 33%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: large;
+  font-size: 150%;
   font-weight: bold;
   text-decoration: underline;
   background-color: transparent;
   border: none;
 }
-
+.token{
+  background-image: url(/immagini/COIN.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  width: 8%;
+  height: 80%;
+  right: 15%;
+  top: 5%;
+}
+.scritta_token{
+  position: relative;
+  margin-left: 87.5%;
+  top: 12.5%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 200%;
+  font-weight: bold;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+}
 div.inventory_square{
   flex: 1; 
   border: 3px solid #000;
@@ -170,20 +193,32 @@ div.inventory_square:nth-child(3){
 button.sell{
   bottom: 0.5em;
   right: 0.5em;
-  background-color: black;
+  background-image: url(/immagini/trash-alt-svgrepo-com.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: transparent;
 }
 button.switch{
-  background-color: rgb(200, 255, 0);
   top: 0.5em;
   right: 0.5em;
+  background-image: url(/immagini/transfer-svgrepo-com\ \(1\).png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: transparent;
 }
 button.rename{
   top: 0.5em;
   left: 0.5em;
   width: 10%;
   height: 15%;
-  color: whitesmoke;
   font-weight: bold;
+  background-image: url(/immagini/price-tag-svgrepo-com.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: transparent;
 }
 .name_square{
   margin-left: 15%;
