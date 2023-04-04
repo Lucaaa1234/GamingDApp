@@ -1,4 +1,5 @@
 //const { urlencoded } = require("express");
+const hidding = document.getElementById('hidding');
 
 let myAddress = "";
 let web3 = {};
@@ -339,8 +340,6 @@ async function Compra_Rara() {
     }).then(function(response) {
         console.log(response)
     }); 
-	let c =  getAllSlots()
-	console.log(c)
     await Update_Slots()
 }
 async function Compra_Epica() {
@@ -350,8 +349,9 @@ async function Compra_Epica() {
     }).then(function(response) {
         console.log(response)
     });
-	let c =  getAllSlots()
-	console.log(c) 
+	//let c =  getAllSlots()
+	//console.log(c)
+	await Update_Slots()
 }
 async function Vendi_Gallina_Slot_3() {
     myContract.methods.Vendi_Gallina_Slot_3().send({
@@ -359,6 +359,7 @@ async function Vendi_Gallina_Slot_3() {
     }).then(function(response) {
         console.log(response)
     }); 
+	await Update_Slots()
 }
 async function Vendi_Gallina_Slot_4() {
     myContract.methods.Vendi_Gallina_Slot_4().send({
@@ -366,6 +367,7 @@ async function Vendi_Gallina_Slot_4() {
     }).then(function(response) {
         console.log(response)
     });  
+	await Update_Slots()
 } 
 async function Vendi_Gallina_Slot_5() {
     myContract.methods.Vendi_Gallina_Slot_5().send({
@@ -373,6 +375,7 @@ async function Vendi_Gallina_Slot_5() {
     }).then(function(response) {
         console.log(response)
     });  
+	await Update_Slots()
 } 
 async function Accoppiamento() {
     myContract.methods.Accoppiamento().send({
@@ -404,4 +407,13 @@ async function Sposta() {
         console.log(response)
     });  
 } 
+btn.addEventListener('click', () => {
+	btn.style.display = 'none';
+});
 
+/*funzione CheckBox {
+	if (due checkbox cliccate) {
+		chiama la funzione sposta e mette come input 0/1/2/3/4 in base a quali checkbox sono state cliccate.
+		riporta le checkbox tutte a 0
+	}
+}*/

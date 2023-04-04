@@ -9,8 +9,8 @@ body {
   width: 18em;
   height: 10em;
   top: 0;
-  margin-left: 35%;
-  margin-top: -5%;
+  margin-left: 36%;
+  margin-top: -7%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -219,7 +219,11 @@ button.sell{
   background-color: transparent;
   cursor: pointer;
 }
-button.switch{
+input.switch{
+  top: 0;
+  right: 0;
+}
+input.switch + label {
   top: 0.5em;
   right: 0.5em;
   background-image: url(/immagini/transfer-svgrepo-com\ \(1\).png);
@@ -228,7 +232,20 @@ button.switch{
   background-size: contain;
   background-color: transparent;
   cursor: pointer;
+  top: 0.5em;
+  right: 0.5em;
 }
+input.switch:checked + label{
+  top: 0.5em;
+  right: 0.5em;
+  background-image: url(/immagini/transfer-svgrepo-com\ \(1\).png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: blue;
+  cursor: pointer;
+}
+
 button.rename{
   top: 0.5em;
   left: 0.5em;
