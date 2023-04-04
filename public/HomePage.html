@@ -11,15 +11,14 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<h1 class="title"> Chicken that Lays Finney Eggs</h1>
 <div class="rectangle">
         <div class="square square_1">
                 <div class="square square_1_1">
                         <div class="square working_chicken chicken_left">
-                                <div class="square chicken_image left_chicken_image"></div>
+                                <div class="square chicken_image slot_0"></div>
                         </div>
                         <div class="square working_chicken chicken_right">
-                                <div class="square chicken_image right_chicken_image"></div>
+                                <div class="square chicken_image slot_1"></div>
                         </div>
                         <button class="reclame" onclick="Riscatta()"></button>
                 </div>
@@ -27,7 +26,8 @@
                         <button class="square cuore" onclick="connectMetamask()"></button>
                         <button class="scritta_cuore" onclick="Accoppiamento()">Accoppia</button>
                         <button class="square token"></button>  
-                        <button class="scritta_token">290</button>    
+                        <button class="scritta_token">290</button> 
+                        <button onclick="connectMetamask()" class="b1 connect" ></button>  
                 </div>
         </div>
         <div class="square square_2">
@@ -38,7 +38,7 @@
                         <div class="square name_square">
                                 <span class="name_scritta">Pippo</span>
                         </div>
-                        <div class="square inventary_image chicken_inventary1">
+                        <div class="square inventary_image slot_2">
 
                         </div>
                 </div>
@@ -49,7 +49,7 @@
                         <div class="square name_square">
                                 <span class="name_scritta">Pluto</span>
                         </div>
-                        <div class="square inventary_image chicken_inventary2">
+                        <div class="square inventary_image slot_3">
 
                         </div>
                 </div>
@@ -60,7 +60,7 @@
                         <div class="square name_square">
                                 <span class="name_scritta">Topolino</span>
                         </div>
-                        <div class="square inventary_image chicken_inventary3">
+                        <div class="square inventary_image slot_4">
 
                         </div>
                 </div>
@@ -68,19 +68,19 @@
         <div class="square square_3">
                 <div class="square shop_square rarity">
                         <div class="square price">
-                                <span class="price_scritta">100</span>
+                                <span class="price_scritta">10</span>
                         </div>
                         <button class="Gallina_shop comune" onclick="Compra_Comune()"></button>
                 </div>
                 <div class="square shop_square rarity">
                         <div class="square price">
-                                <span class="price_scritta" >1000</span>
+                                <span class="price_scritta" >50</span>
                         </div>
                         <button class="Gallina_shop rara" onclick="Compra_Rara()"></button>
                 </div>
                 <div class="square shop_square rarity">
                         <div class="square price">
-                                <span class="price_scritta"">5000</span>
+                                <span class="price_scritta"">100</span>
                         </div>
                         <button class="Gallina_shop epica"  onclick="Compra_Epica()"></button>
                 </div>

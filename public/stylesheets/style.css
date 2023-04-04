@@ -5,18 +5,42 @@ body {
   overflow-x: hidden;
   
 }
+.b1{
+  width: 18em;
+  height: 10em;
+  top: 0;
+  margin-left: 35%;
+  margin-top: -5%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.b1:active::after{
+  visibility: hidden;
+}
+.contract{
+  background-image: url(/immagini/load.png);
+  align-items: center;
+  margin-left: 50%;
+  right: 0;
+}
+.connect{
+  background-image: url(/immagini/connect.png);
+}
 .title{
-  margin-left: 15%;
-  margin-bottom:-2%;
-  text-decoration: underline;
-  font-weight: bold;
+  bottom: -2;
+  width: 40%;
+  height: 80%;
   color: red;
 }
 div.rectangle{
   height: 45em;
   width: 90em;
   margin: auto;
-  margin-top: 2%;
+  margin-top: 0;
   position: relative;
   border: 2px solid #000;
 }
@@ -84,15 +108,7 @@ div.working_chicken{
   background-size:contain;
   background-color: transparent;
 }
-.left_chicken_image{
-  left: 0.3em;
-  background-image: url(/immagini/GC.png);
-}
-.right_chicken_image{
-  right: 0.3em;
-  background-image: url(/immagini/GE.png);
-  transform: scaleX(-1);
-}
+
 .chicken_right{
   margin-top: 3%;
   right: 2em;
@@ -246,8 +262,35 @@ span.name_scritta{
   bottom: 0;
   left: 0;
 }
-.chicken_inventary1{
-  background-image: url(/immagini/GA.png);
+.slot_2{
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  transform: scaleX(-1);
+}
+.slot_0{
+  left: 0.3em;
+  background-image: none;
+}
+.slot_1{
+  right: 0.3em;
+  background-image: none;
+  transform: scaleX(-1);
+}
+.slot_3{
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  transform: scaleX(-1);
+}
+.slot_4{
+  background-image: none;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -336,17 +379,17 @@ div.bottom{
 }
 
 .comune{
-  background-image: url(/immagini/GC.png);
+  background-image: url(/immagini/G1.png);
   cursor: pointer;
 }
 
 .rara{
-  background-image: url(/immagini/GR.png);
+  background-image: url(/immagini/G2.png);
   cursor: pointer;
 }
 
 .epica{
-  background-image: url(/immagini/GE.png);
+  background-image: url(/immagini/G3.png);
   cursor: pointer;
 }
 div.price{

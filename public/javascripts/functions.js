@@ -1,7 +1,11 @@
+//const { urlencoded } = require("express");
+
 let myAddress = "";
 let web3 = {};
 //web3 = {};
-let myContract = {}
+let myContract = {};
+let slots = [];
+var sName = "";
 
 async function connectMetamask() {
     const {ethereum} = window; //prende gli ethereum dalla window del browser
@@ -13,11 +17,11 @@ async function connectMetamask() {
         myAddress = response[0];
         console.log(response);
     })
-
-    const accounts = await ethereum.request({method: 'eth_accounts'});
+	await loadContract()
+    /*const accounts = await ethereum.request({method: 'eth_accounts'});
     console.log("account via metamask api");
     console.log(accounts[0]);
-    myAddress = accounts[0];
+    myAddress = accounts[0];*/
 }
 
 async function loadContract() { //variabile per loadare il contratto, prima di usarla bisogna connettersi a metamask
@@ -288,35 +292,56 @@ async function loadContract() { //variabile per loadare il contratto, prima di u
 			"type": "receive"
 		}
 	]
-let contractAddress = "0x17822997D02978EDa0436bFd2afFA8C4E85399B8"
+let contractAddress = "0x8f6522Cf0C79C9466d19776b504C3e1724678221"
     myContract = new web3.eth.Contract(abi, contractAddress);
     console.log(myContract);
+	await Update_Slots()
 	/*metti una get dell'array in modo che carica la tua schermata.*/
 }
 
+//da richiamare ogni volta che si fa un'operazione che modifica gli slot
+//await Update_Slots()
+async function Update_Slots() {
+	await myContract.methods.getAllSlots().call().then(function(response) {
+		console.log(response)
+		slots = response
+	});
+	for (let i = 0; i <5; i++) {
+		if (slots[i].occupato == true) {
+			//rinominare nome classe
+			if (i<2){
+				sName = "square chicken_image slot_" + (i);
+			} 
+			else{
+				sName = "square inventary_image slot_" + (i);
+			}
+			let imageToShow = "G" + slots[i].g.rarity + ".png"
+			console.log(sName)
+			//rinominare immagini in base alla rarità
+			document.getElementsByClassName(sName)[0].style.backgroundImage = "url(/immagini/" + imageToShow + ")"
+		}
+	}
+}
+
 async function Compra_Comune() {
-	let slots = []
     myContract.methods.Compra_Comune().send({
         from: myAddress,
         value: web3.utils.toWei('6', 'finney')
     }).then(function(response) {
         console.log(response)
-		myContract.methods.getAllSlots().call().then(function(response) {
-			console.log(response)
-			slots = response
-		});
     });
+	await Update_Slots()
 }
 async function Compra_Rara() {
     myContract.methods.Compra_Rara().send({
         from: myAddress,
-        value: web3.utils.toWei('1000', 'gwei')
+        value: web3.utils.toWei('31', 'finney')
     }).then(function(response) {
         console.log(response)
     }); 
 	let c =  getAllSlots()
 	console.log(c)
-    
+    await Update_Slots()
 }
 async function Compra_Epica() {
     myContract.methods.Compra_Epica().send({
