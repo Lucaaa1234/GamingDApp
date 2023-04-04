@@ -1,0 +1,40 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url(/immagini/69e4cc7c-29a2-472c-b35f-a899ac5ef803_rw_1920.jpg);
+    overflow-y: hidden; 
+    overflow-x: hidden;
+}
+.center{
+    margin-top: 15%;
+    left: 28%;    
+    width: 80%;
+    height: 80%;
+    position: relative;
+    text-align: center;
+    display: flex;   
+    flex-direction: column;
+}
+.b1{
+    width: 18em;
+    height: 10em;
+    top: 0;
+    margin-left: 18%;
+    margin-bottom: 1em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+}
+.contract{
+    background-image: url(/immagini/load.png);
+}
+.connect{
+    background-image: url(/immagini/connect.png);
+}
+.game{
+    background-image: url(/immagini/game.png);
+}

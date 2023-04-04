@@ -241,6 +241,7 @@ async function Compra_Comune() {
     }).then(function(response) {
         console.log(response)
     });
+	
 }
 async function Compra_Rara() {
     myContract.methods.Compra_Rara().send({
@@ -308,3 +309,4 @@ async function Sposta() {
         console.log(response)
     });  
 } 
+
