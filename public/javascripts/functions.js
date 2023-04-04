@@ -7,6 +7,7 @@ let web3 = {};
 let myContract = {};
 let slots = [];
 var sName = "";
+var slot_index = [0, 0];
 
 async function connectMetamask() {
     const {ethereum} = window; //prende gli ethereum dalla window del browser
@@ -27,15 +28,6 @@ async function connectMetamask() {
 
 async function loadContract() { //variabile per loadare il contratto, prima di usarla bisogna connettersi a metamask
     let abi = [
-		{
-			"inputs": [],
-			"stateMutability": "payable",
-			"type": "constructor"
-		},
-		{
-			"stateMutability": "payable",
-			"type": "fallback"
-		},
 		{
 			"inputs": [],
 			"name": "Accoppiamento",
@@ -83,66 +75,6 @@ async function loadContract() { //variabile per loadare il contratto, prima di u
 			"type": "function"
 		},
 		{
-			"inputs": [
-				{
-					"internalType": "uint256",
-					"name": "z",
-					"type": "uint256"
-				}
-			],
-			"name": "GetGallina",
-			"outputs": [
-				{
-					"components": [
-						{
-							"internalType": "string",
-							"name": "nome",
-							"type": "string"
-						},
-						{
-							"internalType": "uint256",
-							"name": "rarity",
-							"type": "uint256"
-						},
-						{
-							"internalType": "bool",
-							"name": "produzione",
-							"type": "bool"
-						},
-						{
-							"internalType": "bool",
-							"name": "accoppiamento",
-							"type": "bool"
-						}
-					],
-					"internalType": "struct Goose_That_Lays_Gwei_Eggs.Gallina",
-					"name": "",
-					"type": "tuple"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "uint256",
-					"name": "z",
-					"type": "uint256"
-				}
-			],
-			"name": "GetSlotsOccupati",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "occupato",
-					"type": "bool"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
 			"inputs": [],
 			"name": "Riscatta",
 			"outputs": [],
@@ -183,6 +115,15 @@ async function loadContract() { //variabile per loadare il contratto, prima di u
 		},
 		{
 			"inputs": [],
+			"stateMutability": "payable",
+			"type": "constructor"
+		},
+		{
+			"stateMutability": "payable",
+			"type": "fallback"
+		},
+		{
+			"inputs": [],
 			"name": "Vendi_Gallina_Slot_3",
 			"outputs": [],
 			"stateMutability": "payable",
@@ -201,6 +142,10 @@ async function loadContract() { //variabile per loadare il contratto, prima di u
 			"outputs": [],
 			"stateMutability": "payable",
 			"type": "function"
+		},
+		{
+			"stateMutability": "payable",
+			"type": "receive"
 		},
 		{
 			"inputs": [],
@@ -250,6 +195,79 @@ async function loadContract() { //variabile per loadare il contratto, prima di u
 			"type": "function"
 		},
 		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "z",
+					"type": "uint256"
+				}
+			],
+			"name": "GetGallina",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "nome",
+							"type": "string"
+						},
+						{
+							"internalType": "uint256",
+							"name": "rarity",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bool",
+							"name": "produzione",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "accoppiamento",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct Goose_That_Lays_Gwei_Eggs.Gallina",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getRaritaNuovaGallina",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "z",
+					"type": "uint256"
+				}
+			],
+			"name": "GetSlotsOccupati",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "occupato",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
 			"inputs": [],
 			"name": "getToken",
 			"outputs": [
@@ -287,13 +305,9 @@ async function loadContract() { //variabile per loadare il contratto, prima di u
 			],
 			"stateMutability": "view",
 			"type": "function"
-		},
-		{
-			"stateMutability": "payable",
-			"type": "receive"
 		}
 	]
-let contractAddress = "0x8f6522Cf0C79C9466d19776b504C3e1724678221"
+let contractAddress = "0x4645A8FF0170523c33f18DC38fD7Ad103BAE8e9D"
     myContract = new web3.eth.Contract(abi, contractAddress);
     console.log(myContract);
 	await Update_Slots()
@@ -400,20 +414,52 @@ async function Ritira_Soldi() {
         console.log(response)
     });  
 } 
-async function Sposta() {
-    myContract.methods.Sposta(0, 4).send({
-        from: myAddress,
-    }).then(function(response) {
-        console.log(response)
-    });  
-} 
+
 btn.addEventListener('click', () => {
 	btn.style.display = 'none';
 });
 
-/*funzione CheckBox {
-	if (due checkbox cliccate) {
-		chiama la funzione sposta e mette come input 0/1/2/3/4 in base a quali checkbox sono state cliccate.
-		riporta le checkbox tutte a 0
+//controllo due checkbox cliccate
+async function controlCheckBox(){
+	let a = document.getElementsByName('chk');
+	let counter = 0;
+	let i;
+	var z = 0;
+	for (i=0;i<a.length;i++) {
+		if (a[i].checked==true) {
+			slot_index[z] = a[i].id;
+			console.log(slot_index[z] + 'sono lo slot' + z);
+			counter = counter+1;
+			z++;
+		}
 	}
+	if (counter==2) {
+		await Sposta();
+		for (i=0;i<a.length;i++) {
+			if (a[i].checked==true) {
+				a[i].checked=false;
+			}
+		}
+	}
+}
+
+async function Sposta () {
+    myContract.methods.Sposta(slot_index[0], slot_index[1]).send({
+        from: myAddress,
+    }).then(function(response) {
+        console.log(response)
+    });  
+	await Update_Slots();
+} 
+
+/*funzione Schiudi_Uovo {
+	quando la clicchi nasce la nuova gallina e sovrascrivi l'immagine dell'uovo
+}*/
+
+/*funzione Accoppiamento (quella sopra da modificare) {
+	prendi rarita nuova gallina
+	in base a quale è fai uscire l'immagine dell'uovo nel primo slot disponibile.
+	come trovare lo slot giusto nel quale posizionare l'uovo?: 
+	un controllo di tutti gli slot occupati = true e che hanno g.nome = "".
+
 }*/
