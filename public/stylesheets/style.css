@@ -225,28 +225,6 @@ input.switch{
   border-radius: 10%;
   background-color: whitesmoke;
 }
-input.switch + label {
-  top: 0.5em;
-  right: 0.5em;
-  background-image: url(/immagini/transfer-svgrepo-com\ \(1\).png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  background-color: transparent;
-  cursor: pointer;
-  top: 0.5em;
-  right: 0.5em;
-}
-input.switch:checked + label{
-  top: 0.5em;
-  right: 0.5em;
-  background-image: url(/immagini/transfer-svgrepo-com\ \(1\).png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  background-color: blue;
-  cursor: pointer;
-}
 
 button.rename{
   top: 0.5em;
@@ -432,7 +410,9 @@ div.price{
   height: 15%;
   background-color: gold;
   border-radius: 6%;
-  visibility: hidden;
-  opacity: 0.9;
+  opacity: 0.8;
   z-index: 2;
+}
+.left{
+  left: 0;
 }

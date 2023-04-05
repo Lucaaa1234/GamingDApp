@@ -20,7 +20,7 @@ body{
     height: 10em;
     top: 0;
     margin-left: 18%;
-    margin-bottom: 1em;
+    margin-bottom: 1%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -29,12 +29,12 @@ body{
     cursor: pointer;
     
 }
-.contract{
-    background-image: url(/immagini/load.png);
-}
-.connect{
-    background-image: url(/immagini/connect.png);
-}
 .game{
     background-image: url(/immagini/game.png);
+}
+.logo{
+    width: 30%;
+    height: 60%;
+    margin-top: 30%;
+    background-image: rgb(31, 123, 203);
 }

@@ -310,7 +310,7 @@ async function loadContract() { //variabile per loadare il contratto, prima di u
 			"type": "function"
 		}
 	]
-let contractAddress = "0x82453a73A05B4DAa5AFF290A4c6f68A3330c68d4"
+let contractAddress = "0xa0c9a5136D1A21368751969206A3D75e0daBF332"
     myContract = new web3.eth.Contract(abi, contractAddress);
     console.log(myContract);
 	await Update_Slots()
@@ -350,7 +350,8 @@ async function Update_Slots() {
 			console.log(sName)
 			sium = "sium"
 			document.getElementsByClassName(sName)[0].style.backgroundImage = "url(/immagini/" + imageToShow + ")"
-			document.getElementById(sium).style.visibility = "visible";
+			console.log(document.getElementsByClassName(sium)[0].style.visibility)
+			document.getElementsByClassName(sium)[0].style.visibility = "visible";
 		}
 	}
 }
@@ -478,6 +479,7 @@ async function Accoppiamento() {
     }).then(function(response) {
         console.log(response)
     });
+	
 } 
 async function Riscatta() {
     myContract.methods.Riscatta().send({
@@ -501,9 +503,9 @@ async function Ritira_Soldi() {
     });  
 } 
 
-btn.addEventListener('click', () => {
+/*btn.addEventListener('click', () => {
 	btn.style.display = 'none';
-});
+});*/
 
 //controllo due checkbox cliccate
 async function controlCheckBox(){
