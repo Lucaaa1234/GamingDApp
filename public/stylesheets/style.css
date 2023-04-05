@@ -42,7 +42,7 @@ div.rectangle{
   margin: auto;
   margin-top: 0;
   position: relative;
-  border: 2px solid #000;
+  box-shadow: 5px 5px 5px 5px royalblue;
 }
 .square {
   position: absolute;
@@ -79,7 +79,6 @@ div.rectangle{
   width: 74.85%;
   height:25%;
   background-color: rgb(5, 44, 218);
-  border-top: 2px solid black;
 }
 
 .square_1_1 {
@@ -191,7 +190,7 @@ div.inventory_square{
   margin-left: 0.5em;
   margin-right: 0.5em;
   background-color: lightblue;
-  
+  z-index: 1;
 }
 div.inventory_square:nth-child(1){
   top : 1;
@@ -222,6 +221,9 @@ button.sell{
 input.switch{
   top: 0;
   right: 0;
+  border: 2px solid #000;
+  border-radius: 10%;
+  background-color: whitesmoke;
 }
 input.switch + label {
   top: 0.5em;
@@ -359,7 +361,6 @@ span.name_scritta{
   color: rgb(191, 255, 0);
   text-decoration: underline;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  cursor: pointer;
 }
 .divide{
   width: 90%;
@@ -423,4 +424,15 @@ div.price{
   font-size: 120%;
   font-weight: 999;
   text-decoration: underline;
+}
+.sium{
+  margin-top: 50%;
+  margin-left: 20%;
+  width: 50%;
+  height: 15%;
+  background-color: gold;
+  border-radius: 6%;
+  visibility: hidden;
+  opacity: 0.9;
+  z-index: 2;
 }

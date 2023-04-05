@@ -14,6 +14,7 @@
 <div class="rectangle">
         <div class="square square_1">
                 <div class="square square_1_1">
+                        
                         <div class="square working_chicken chicken_left">
                                 <div class="square chicken_image slot_0"></div>
                                 <input type="checkbox" name="chk" id="0" class="square inventary_function switch" value="check" onclick="controlCheckBox()"></input>
@@ -27,45 +28,45 @@
                 <div class="square square_1_2">
                         <button class="square cuore" onclick="Accoppiamento()"></button>
                         <button class="scritta_cuore" onclick="Accoppiamento()">Accoppia</button>
-                        <button class="square token"></button>  
-                        <button class="scritta_token">290</button> 
+                        <button class="square token" onclick="Ritira_Soldi()"></button>  
+                        <button onclick="Guarda_Token()" class="scritta_token" id="token_count">0</button> 
                         <button onclick="connectMetamask()" class="b1 connect" id="hidding" ></button>  
+                        <button onclick="Schiudi_Uovo()" class="sium"></button>
                 </div>
         </div>
         <div class="square square_2">
                 <div class="square inventory_square">
                         <button class="square inventary_function sell" onclick="Vendi_Gallina_Slot_3()"></button>
                         <input type="checkbox" name="chk" id="2" class="square inventary_function switch" value="check" onclick="controlCheckBox()"></input>
-                        <label for="check"></label>
                         <button class="square inventary_function rename"></button>
                         <div class="square name_square">
                                 <span class="name_scritta">Pippo</span>
                         </div>
                         <div class="square inventary_image slot_2">
-
                         </div>
+                        <button onclick="Schiudi_Uovo()" class="sium">Schiudi Uovo</button>
                 </div>
                 <div class="square inventory_square">
                         <button class="square inventary_function sell" onclick="Vendi_Gallina_Slot_4()"></button> 
                         <input type="checkbox" name="chk" id="3" class="square inventary_function switch" value="check" onclick="controlCheckBox()"></input>
-                        <button class="square inventary_function rename"></button>
+                        <button class="square inventary_function rename"></button>                    
                         <div class="square name_square">
                                 <span class="name_scritta">Pluto</span>
                         </div>
                         <div class="square inventary_image slot_3">
-
                         </div>
+                        <button onclick="Schiudi_Uovo()" class="sium">Schiudi Uovo</button>
                 </div>
                 <div class="square inventory_square">
                         <button class="square inventary_function sell" onclick="Vendi_Gallina_Slot_5()"></button>
                         <input type="checkbox" name="chk" id="4" class="square inventary_function switch" value="check" onclick="controlCheckBox()"></input>
-                        <button class="square inventary_function rename"></button>
+                        <button class="square inventary_function rename"></button>                   
                         <div class="square name_square">
                                 <span class="name_scritta">Topolino</span>
                         </div>
                         <div class="square inventary_image slot_4">
-
                         </div>
+                        <button onclick="Schiudi_Uovo()" class="sium" id="sium">Schiudi Uovo</button>
                 </div>
         </div>
         <div class="square square_3">

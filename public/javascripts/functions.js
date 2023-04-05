@@ -8,6 +8,9 @@ let myContract = {};
 let slots = [];
 var sName = "";
 var slot_index = [0, 0];
+var rarita_uovo;
+var gettoni = 0;
+var sium = ""
 
 async function connectMetamask() {
     const {ethereum} = window; //prende gli ethereum dalla window del browser
@@ -307,7 +310,7 @@ async function loadContract() { //variabile per loadare il contratto, prima di u
 			"type": "function"
 		}
 	]
-let contractAddress = "0x4645A8FF0170523c33f18DC38fD7Ad103BAE8e9D"
+let contractAddress = "0x82453a73A05B4DAa5AFF290A4c6f68A3330c68d4"
     myContract = new web3.eth.Contract(abi, contractAddress);
     console.log(myContract);
 	await Update_Slots()
@@ -321,8 +324,12 @@ async function Update_Slots() {
 		console.log(response)
 		slots = response
 	});
+	await myContract.methods.getRaritaNuovaGallina().call().then(function(response) {
+		console.log(response)
+		rarita_uovo = response
+	});
 	for (let i = 0; i <5; i++) {
-		if (slots[i].occupato == true) {
+		if (slots[i].occupato == true && slots[i].g.rarity !=0) {
 			//rinominare nome classe
 			if (i<2){
 				sName = "square chicken_image slot_" + (i);
@@ -334,6 +341,16 @@ async function Update_Slots() {
 			console.log(sName)
 			//rinominare immagini in base alla rarità
 			document.getElementsByClassName(sName)[0].style.backgroundImage = "url(/immagini/" + imageToShow + ")"
+		}
+		else if (slots[i].occupato == true && slots[i].g.rarity ==0) {
+			console.log("rarita uovo: "+rarita_uovo )
+			//rinominare nome classe
+			sName = "square inventary_image slot_" + (i);
+			let imageToShow = "U" + rarita_uovo + ".png"
+			console.log(sName)
+			sium = "sium"
+			document.getElementsByClassName(sName)[0].style.backgroundImage = "url(/immagini/" + imageToShow + ")"
+			document.getElementById(sium).style.visibility = "visible";
 		}
 	}
 }
@@ -359,7 +376,7 @@ async function Compra_Rara() {
 async function Compra_Epica() {
     myContract.methods.Compra_Epica().send({
         from: myAddress,
-        value: web3.utils.toWei('5000', 'gwei')
+        value: web3.utils.toWei('62', 'finney')
     }).then(function(response) {
         console.log(response)
     });
@@ -392,13 +409,75 @@ async function Vendi_Gallina_Slot_5() {
 	await Update_Slots()
 } 
 async function Accoppiamento() {
+	let x = '';
+	await myContract.methods.getAllSlots().call().then(function(response) {
+		console.log(response)
+		slots = response
+	});
+
+	if(slots[0].g.rarity == 1){ // se la prima gallina è comune
+		if (slots[1].g.rarity == 1){ // se la seconda gallina è comune
+			x = '9';
+		}
+		if (slots[1].g.rarity == 2){ // se la seconda gallina è rara
+			x = '22';
+		}
+		if (slots[1].g.rarity == 3){ // se la seconda gallina è epica
+			x = '37';
+		}
+		if (slots[1].g.rarity == 4){ // se la seconda gallina è leggendaria
+			x = '49';
+		}
+	}
+	else if (slots[0].g.rarity == 2){ // se la prima gallina è rara
+		if (slots[1].g.rarity == 1){ // se la seconda gallina è comune
+			x = '22';
+		}
+		if (slots[1].g.rarity == 2){ // se la seconda gallina è rara
+			x = '34';
+		}
+		if (slots[1].g.rarity == 3){ // se la seconda gallina è epica
+			x = '46';
+		}
+		if (slots[1].g.rarity == 4){ // se la seconda gallina è leggendaria
+			x = '74';
+		}
+	}
+	else if (slots[0].g.rarity == 3){ // se la prima gallina è epica
+		if (slots[1].g.rarity == 1){ // se la seconda gallina è comune
+			x = '37';
+		}
+		if (slots[1].g.rarity == 2){ // se la seconda gallina è rara
+			x = '46';
+		}
+		if (slots[1].g.rarity == 3){ // se la seconda gallina è epica
+			x = '80';
+		}
+		if (slots[1].g.rarity == 4){ // se la seconda gallina è leggendaria
+			x = '123';
+		}
+	}
+	else { // se la prima gallina è leggendaria
+		if (slots[1].g.rarity == 1){ // se la seconda gallina è comune
+			x = '49';
+		}
+		if (slots[1].g.rarity == 2){ // se la seconda gallina è rara
+			x = '74';
+		}
+		if (slots[1].g.rarity == 3){ // se la seconda gallina è epica
+			x = '123';
+		}
+		if (slots[1].g.rarity == 4){ // se la seconda gallina è leggendaria
+			x = '307';
+		}
+	}
+
     myContract.methods.Accoppiamento().send({
         from: myAddress,
+		value: web3.utils.toWei(x, 'finney')
     }).then(function(response) {
         console.log(response)
-    });  
-	let c =  getAllSlots()
-	console.log(c)
+    });
 } 
 async function Riscatta() {
     myContract.methods.Riscatta().send({
@@ -407,6 +486,13 @@ async function Riscatta() {
         console.log(response)
     });  
 } 
+async function Guarda_Token() {
+	await myContract.methods.getToken().call().then(function(response) {
+		console.log(response)
+		gettoni = response
+	});
+	document.getElementById("token_count").innerHTML = gettoni;
+}
 async function Ritira_Soldi() {
     myContract.methods.Ritira_Soldi().send({
         from: myAddress,
@@ -452,14 +538,11 @@ async function Sposta () {
 	await Update_Slots();
 } 
 
-/*funzione Schiudi_Uovo {
-	quando la clicchi nasce la nuova gallina e sovrascrivi l'immagine dell'uovo
-}*/
+async function Schiudi_Uovo() {
+    myContract.methods.Schiudi_Uovo().send({
+        from: myAddress,
+    }).then(function(response) {
+        console.log(response)
+    });  
+} 
 
-/*funzione Accoppiamento (quella sopra da modificare) {
-	prendi rarita nuova gallina
-	in base a quale è fai uscire l'immagine dell'uovo nel primo slot disponibile.
-	come trovare lo slot giusto nel quale posizionare l'uovo?: 
-	un controllo di tutti gli slot occupati = true e che hanno g.nome = "".
-
-}*/
